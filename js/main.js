@@ -1,10 +1,6 @@
-import './style.css'
+// import 'cssstyle.css'
 import * as THREE from 'three'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
 
 // function getExpScoreA(ratingA - ratingB) {
 //   return 1.0 / (1 + 10 ** ((ratingB - ratingA) / 400))
@@ -15,7 +11,7 @@ document.querySelector('#app').innerHTML = `
 // }
 
 // class Player {
-//   constructor(name, rating=1500) {
+//   constructor(name, rating=1000) {
 //     this.name = name
 //     this.rating = rating
 //     this.games = 0
