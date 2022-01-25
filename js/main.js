@@ -1,5 +1,7 @@
 // import 'cssstyle.css'
 import * as THREE from 'three'
+import React from "react";
+import ReactDOM from "react-dom";
 
 
 // function getExpScoreA(ratingA - ratingB) {
@@ -90,3 +92,6 @@ mesh.rotation.y = time / 1000;
 renderer.render( scene, camera );
 
 }
+
+
+// ReactDom.render(<h1>Hello world!</h1>, document.getElementById("hello"));
