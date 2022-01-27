@@ -1,9 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-
-
-
 export default function PlayerForm() {
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -11,7 +5,7 @@ export default function PlayerForm() {
       const form = new FormData(event.target);
       const formData = Object.fromEntries(form.entries());
   
-      const res = await fetch('/api/cars', {
+      const res = await fetch('/api/players', {
         body: JSON.stringify(formData),
         headers: {
           'Content-Type': 'application/json',
@@ -31,15 +25,3 @@ export default function PlayerForm() {
       </form>
     );
   }
-
-
-
-const PlayerForm = (
-    <form onSubmit={handleSubmit}>
-        <input name="Name" type="text"  />
-
-        <button type="submit">Create Player</button>
-    </form>
-);
-
-ReactDOM.render(PlayerForm, document.getElementById("root"));
