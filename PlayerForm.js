@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 
+
+
 export default function PlayerForm() {
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -29,3 +31,15 @@ export default function PlayerForm() {
       </form>
     );
   }
+
+
+
+const PlayerForm = (
+    <form onSubmit={handleSubmit}>
+        <input name="Name" type="text"  />
+
+        <button type="submit">Create Player</button>
+    </form>
+);
+
+ReactDOM.render(PlayerForm, document.getElementById("root"));

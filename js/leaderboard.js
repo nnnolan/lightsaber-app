@@ -1,18 +1,18 @@
-var redisScan = require('redisscan');
-var redis = require('redis').createClient();
+//require redis
+const redis = require('redis');
+const client = redis.createClient();
+
+client.on('connect', function() {
+    console.log('connected');
+    //get data
+    client.get('players', function(err, reply) {
+        console.log(reply);
+    }
+    );
+
+});
 
 
-redisScan({
-        redis: redis,
-        each_callback: function (type, key, subkey, value, cb) {
-            console.log(type, key, subkey, value);
-            cb();
-        },
-        done_callback: function (err) {
-            console.log("-=-=-=-=-=--=-=-=-");
-            redis.quit();
-        }
-    });
 
 
 // function Player(myName, myDate, myScore) {
@@ -35,4 +35,18 @@ function displayLeaderboard() {
 }
 
 displayLeaderboard();
+
+table = (
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+    <tbody id="thingy"></tbody>
+    </table>
+);
+
+ReactDOM.render(table, document.getElementById("table"));
 
