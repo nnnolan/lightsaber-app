@@ -1,14 +1,31 @@
-function Player(myName, myDate, myScore) {
-    this.name = myName;
-    this.date = myDate;
-    this.score = myScore;
-}
+var redisScan = require('redisscan');
+var redis = require('redis').createClient();
 
-// Create new players
-player1 = new Player("Thomas", "01/23/18", 201);
-player2 = new Player("Michael", "03/24/17", 943);
-player3 = new Player("Lisa", "06/04/18", 79); 
-Players = [player1, player2, player3];
+
+redisScan({
+        redis: redis,
+        each_callback: function (type, key, subkey, value, cb) {
+            console.log(type, key, subkey, value);
+            cb();
+        },
+        done_callback: function (err) {
+            console.log("-=-=-=-=-=--=-=-=-");
+            redis.quit();
+        }
+    });
+
+
+// function Player(myName, myDate, myScore) {
+//     this.name = myName;
+//     this.date = myDate;
+//     this.score = myScore;
+// }
+
+// // Create new players
+// player1 = new Player("Thomas", "01/23/18", 201);
+// player2 = new Player("Michael", "03/24/17", 943);
+// player3 = new Player("Lisa", "06/04/18", 79); 
+// Players = [player1, player2, player3];
 
 function displayLeaderboard() {
     let theExport = ""; 
@@ -18,3 +35,4 @@ function displayLeaderboard() {
 }
 
 displayLeaderboard();
+
