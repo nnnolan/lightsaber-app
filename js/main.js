@@ -4,6 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 
+
 // function getExpScoreA(ratingA - ratingB) {
 //   return 1.0 / (1 + 10 ** ((ratingB - ratingA) / 400))
 // }
@@ -15,6 +16,7 @@ import ReactDOM from "react-dom";
 // class Player {
 //   constructor(name, rating=1000) {
 //     this.name = name
+//     this.email = email
 //     this.rating = rating
 //     this.games = 0
 //     this.wins = 0
